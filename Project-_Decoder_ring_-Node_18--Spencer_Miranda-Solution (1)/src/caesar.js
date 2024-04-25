@@ -5,10 +5,8 @@
 
 const caesar = (function () {
   function caesar(input, shift, encode = true) {
-    // Check if shift value is missing or out of range
     if (shift === undefined || shift < -25 || shift > 25 || shift === 0) return false;
 
-    // If decode is true, convert shift to negative
     if (!encode) shift *= -1;
 
     return input
@@ -16,11 +14,8 @@ const caesar = (function () {
       .split('')
       .map(char => {
         if (/[a-z]/.test(char)) {
-          // Convert character to alphabet index (0-25)
           let charIndex = char.charCodeAt(0) - 97;
-          // Apply shift and ensure it wraps around within the range of the alphabet
           charIndex = (charIndex + shift + 26) % 26;
-          // Convert back to character
           return String.fromCharCode(charIndex + 97);
         } else {
           return char;
