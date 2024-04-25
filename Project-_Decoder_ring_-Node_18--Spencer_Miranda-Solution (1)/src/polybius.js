@@ -36,7 +36,7 @@ const polybius = (function () {
           if (swappedPolybiusSquare[pair]) {
             decoded += swappedPolybiusSquare[pair];
           } else {
-            return false; // Handle invalid pairs
+            return false;
           }
         }
       }
